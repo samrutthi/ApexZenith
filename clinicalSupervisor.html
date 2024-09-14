@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Supervisor Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- Sidebar and Main Content Wrapper -->
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white">
+            <div class="p-6">
+                <!-- Profile Section -->
+                <div class="flex flex-col items-center mb-6">
+                    <div class="bg-gray-400 rounded-full w-24 h-24 flex items-center justify-center">
+                        <span class="text-gray-800 text-xl">100x100</span>
+                    </div>
+                    <h2 class="mt-4 text-2xl font-semibold">John Doe</h2>
+                    <p class="text-sm text-gray-400">Clinical Supervisor</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="block text-gray-300 hover:text-white">Add Patient Details</a></li>
+                        <li><a href="#" class="block text-gray-300 hover:text-white">Allocate Therapist</a></li>
+                        <li><a href="#" class="block text-gray-300 hover:text-white">Review Pre-Assessment Report</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Header Section -->
+            <header class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-4xl font-semibold text-gray-700">Clinical Supervisor Dashboard</h1>
+                    <p class="mt-2 text-gray-500">Manage patient data, allocate therapists, and review reports.</p>
+                </div>
+                <button onclick="logout()" class="bg-red-500 text-white py-2 px-4 rounded">Logout</button>
+            </header>
+
+            <!-- Dashboard Metrics Section -->
+            <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-blue-500 p-6 rounded-lg shadow-lg text-white">
+                    <h3 class="text-lg">No. of Reports to Review</h3>
+                    <p class="text-3xl font-bold">7</p>
+                </div>
+
+                <div class="bg-green-500 p-6 rounded-lg shadow-lg text-white">
+                    <h3 class="text-lg">No. of Patients to Allocate</h3>
+                    <p class="text-3xl font-bold">3</p>
+                </div>
+
+                <div class="bg-yellow-500 p-6 rounded-lg shadow-lg text-white">
+                    <h3 class="text-lg">No. of Assessments Pending</h3>
+                    <p class="text-3xl font-bold">4</p>
+                </div>
+
+                <div class="bg-purple-500 p-6 rounded-lg shadow-lg text-white">
+                    <h3 class="text-lg">Therapists Present Today</h3>
+                    <p class="text-3xl font-bold">8</p>
+                </div>
+            </section>
+
+            <!-- Basic Information Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Basic Information</h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold">ID</h3>
+                        <p>CS12345</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Name</h3>
+                        <p>Dr. John Doe</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Gender</h3>
+                        <p>Male</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Specialization</h3>
+                        <p>Speech Therapy</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Phone Number</h3>
+                        <p>+91 9876543210</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Email</h3>
+                        <p>john.doe@example.com</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Actions Section -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <!-- Add Patient Details -->
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h2 class="text-lg font-semibold text-gray-800">Add Patient Details</h2>
+                    <p class="text-gray-500 mt-2">Input patient's basic details and create a unique Patient ID.</p>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow transition">Add Details</button>
+                </div>
+
+                <!-- Allocate Therapist -->
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h2 class="text-lg font-semibold text-gray-800">Allocate Therapist</h2>
+                    <p class="text-gray-500 mt-2">Allocate a therapist based on patient's visit or therapy sessions.</p>
+                    <button class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded shadow transition">Allocate</button>
+                </div>
+
+                <!-- Review Pre-Assessment Report -->
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <h2 class="text-lg font-semibold text-gray-800">Review Pre-Assessment Report</h2>
+                    <p class="text-gray-500 mt-2">Review and verify the pre-assessment report submitted by the therapist.</p>
+                    <button class="mt-4 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded shadow transition">Review Report</button>
+                </div>   
+            </section>
+            <!-- Form to Add Patient Details -->
+            <section class="mt-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Add Patient Details</h2>
+
+                    <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Patient Name -->
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium">Patient Name</label>
+                            <input type="text" id="name" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500" placeholder="Enter patient's name">
+                        </div>
+                        <!-- Age -->
+                        <div>
+                            <label for="age" class="block text-gray-700 font-medium">Age</label>
+                            <input type="number" id="age" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500" placeholder="Enter age">
+                        </div>
+                        <!-- Gender -->
+                        <div>
+                            <label for="gender" class="block text-gray-700 font-medium">Gender</label>
+                            <select id="gender" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium">Phone Number</label>
+                            <input type="tel" id="phone" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500" placeholder="Enter phone number">
+                        </div>
+                        <!-- Height -->
+                        <div>
+                            <label for="height" class="block text-gray-700 font-medium">Height (cm)</label>
+                            <input type="number" id="height" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500" placeholder="Enter height">
+                        </div>
+                        <!-- Weight -->
+                        <div>
+                            <label for="weight" class="block text-gray-700 font-medium">Weight (kg)</label>
+                            <input type="number" id="weight" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500" placeholder="Enter weight">
+                        </div>
+                        <!-- Blood Group -->
+                        <div>
+                            <label for="blood_group" class="block text-gray-700 font-medium">Blood Group</label>
+                            <input type="text" id="blood_group" class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-blue-500" placeholder="A+">
+                        </div>
+                    </form>
+
+                    <!-- Submit Button -->
+                    <button class="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg transition">Submit</button>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

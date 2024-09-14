@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+/* Left side */
+.left-half {
+    flex: 1;
+    /*background: url('assets/medh.jpg') no-repeat center center/cover; /* Replace 'your-image-path.jpg' with the actual path */
+    background-color: #022C3F;
+    position: relative;
+    font-family: 'Poppins', sans-serif; /* Left half uses Poppins font */
+}
+
+.left-half .text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.left-half h1 {
+    font-size: 96px; /* H1 made bigger */
+    color:  white; /*ingayu color mathi vachuruken*/
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden; /* Required for typewriter effect */
+    border-right: 4px solid white; /* Creates the typing cursor effect */
+    width: 0; /* Start with 0 width */
+    animation: typing 4s steps(12) forwards, blink 0.75s step-end infinite; /* Typing effect */
+}
+
+.left-half h3 {
+    font-size: 24px;
+    color:  white; /* inga font color ah maathi vachuruken*/
+    text-align: left;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Full width of the text */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: white;
+    }
+}
+
+/* Right side */
+.right-half {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: url('assets/bg.jpg') no-repeat center center/cover;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-panel {
+    background-color: white;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 700px;
+}
+
+.login-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.login-panel input,
+.login-panel select {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.login-panel button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-panel button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design using media queries */
+@media (max-width: 1024px) {
+    .left-half h1 {
+        font-size: 64px;
+    }
+
+    .left-half h3 {
+        font-size: 20px;
+    }
+
+    .login-panel {
+        width: 80%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+ 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-half {
+        height: 25%;
+    }
+
+    .right-half {
+        height: 75%;
+    }
+
+    .left-half h1 {
+        font-size: 48px;
+    }
+
+    .left-half h3 {
+        font-size: 18px;
+    }
+
+    .login-panel {
+        width: 80%;
+        height: 90%;
+        padding: 40px;
+        margin-top: 70px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-half h1 {
+        font-size: 32px;
+    }
+
+    .left-half h3 {
+        font-size: 16px;
+    }
+
+    .login-panel {
+        width: 100%;
+        padding: 20px;
+    }
+}
+.footer {
+
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* Light text color for readability */
+    text-align: center; /* Center-align text */
+    padding: 10px 20px; /* Add padding for spacing */
+    position: fixed; /* Fixed position to stick at the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    width: 100%; /* Full width */
+    font-size: 14px; /* Smaller font size for footer */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 12px; /* Smaller font size for mobile */
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+    }
+}
