@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Supervisor Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Left Sidebar (Dashboard) -->
+      <div class="col-md-3 bg-dark text-white vh-100">
+        <div class="py-4 text-center">
+          <h4>Clinical Supervisor Dashboard</h4>
+        </div>
+        
+        <!-- Profile Section -->
+        <div class="text-center p-4">
+          <img src="https://via.placeholder.com/100" alt="Profile Picture" class="rounded-circle mb-2">
+          <h5>John Doe</h5>
+          <p>Clinical Supervisor</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav flex-column p-3">
+          <a class="nav-link active text-white" href="#patient-form">Add Patient Details</a>
+          <a class="nav-link text-white" href="#allocate-therapist">Allocate Therapist</a>
+          <a class="nav-link text-white" href="#review-report">Review Pre-Assessment Report</a>
+        </nav>
+      </div>
+
+      <!-- Right Content Area -->
+      <div class="col-md-9 bg-light py-4">
+
+        <!-- Dashboard Cards -->
+        <div class="container">
+          <div class="row">
+
+            <!-- Add Patient Details Card -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Add Patient Details</h5>
+                  <p class="card-text">Input patient's basic details and create a unique Patient ID.</p>
+                  <a href="#patient-form" class="btn btn-primary">Add Details</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Allocate Therapist Card -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Allocate Therapist</h5>
+                  <p class="card-text">Allocate a therapist based on patient's visit or therapy sessions.</p>
+                  <a href="#allocate-therapist" class="btn btn-success">Allocate</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review Pre-Assessment Report Card -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Review Pre-Assessment Report</h5>
+                  <p class="card-text">Review and verify the pre-assessment report submitted by the therapist.</p>
+                  <a href="#review-report" class="btn btn-warning">Review Report</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Patient Details Form -->
+        <section id="patient-form" class="container mb-4">
+          <h3>Add Patient Details</h3>
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="patientName" class="form-label">Patient Name</label>
+                <input type="text" class="form-control" id="patientName" placeholder="Enter name">
+              </div>
+              <div class="col-md-6">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" placeholder="Enter age">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-control" id="gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="height" class="form-label">Height (cm)</label>
+                <input type="number" class="form-control" id="height" placeholder="Enter height">
+              </div>
+              <div class="col-md-4">
+                <label for="weight" class="form-label">Weight (kg)</label>
+                <input type="number" class="form-control" id="weight" placeholder="Enter weight">
+              </div>
+              <div class="col-md-4">
+                <label for="bloodGroup" class="form-label">Blood Group</label>
+                <select class="form-control" id="bloodGroup">
+                  <option>A+</option>
+                  <option>B+</option>
+                  <option>O+</option>
+                  <option>AB+</option>
+                  <option>A-</option>
+                  <option>B-</option>
+                  <option>O-</option>
+                  <option>AB-</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </section>
+
+        <!-- Allocate Therapist Section -->
+        <section id="allocate-therapist" class="container mb-4">
+          <h3>Allocate Therapist</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="allocationOption" id="firstVisit" checked>
+            <label class="form-check-label" for="firstVisit">First time appointment → Pre-Assessment Report</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="allocationOption" id="therapySession">
+            <label class="form-check-label" for="therapySession">Allocate Therapist for Therapy Session</label>
+          </div>
+          <button class="btn btn-success mt-3">Allocate</button>
+        </section>
+
+        <!-- Review Pre-Assessment Report Section -->
+        <section id="review-report" class="container">
+          <h3>Review Pre-Assessment Report</h3>
+          <p>Once the pre-assessment report is ready, you can review it here.</p>
+          <button class="btn btn-warning">Review Report</button>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
