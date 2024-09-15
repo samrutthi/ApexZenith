@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Supervisor Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- Sidebar Navigation -->
+    <nav class="bg-gray-800 h-screen fixed w-64">
+        <div class="flex flex-col items-center p-6">
+            <div class="bg-gray-400 rounded-full w-24 h-24 flex items-center justify-center">
+                <span class="text-gray-800 text-xl">100x100</span>
+            </div>
+            <h1 class="text-white text-2xl mb-2">John Doe</h1>
+            <p class="text-gray-400 mb-6">Case Supervisor</p>
+            <ul class="text-white space-y-4">
+                <li><a href="#dashboard" class="hover:text-yellow-400">Dashboard</a></li>
+                <li><a href="#profile" class="hover:text-yellow-400">Profile</a></li>
+                <li><a href="#reviewLessonPlan" class="hover:text-yellow-400">Review Lesson Plan</a></li>
+                <li><a href="#directMessage" class="hover:text-yellow-400">Direct Message</a></li>
+                <li><a href="#reviewReport" class="hover:text-yellow-400">Review Reports</a></li>
+                <li><a href="#viewDetails" class="hover:text-yellow-400">View Details</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="ml-64 p-8">
+            <!-- Header Section -->
+            <header class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-4xl font-semibold text-gray-700">Clinical Supervisor Dashboard</h1>
+                    <p class="mt-2 text-gray-500">Manage patient data, allocate therapists, and review reports.</p>
+                </div>
+                <button onclick="logout()" class="bg-red-500 text-white py-2 px-4 rounded">Logout</button>
+            </header>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-blue-500 text-white p-6 rounded shadow-lg text-center">
+                    <h3 class="text-lg font-semibold">No. of Reports to Review</h3>
+                    <p class="text-3xl">7</p>
+                </div>
+                <div class="bg-green-500 text-white p-6 rounded shadow-lg text-center">
+                    <h3 class="text-lg font-semibold">No. of Patients to Allocate</h3>
+                    <p class="text-3xl">3</p>
+                </div>
+                <div class="bg-yellow-500 text-white p-6 rounded shadow-lg text-center">
+                    <h3 class="text-lg font-semibold">No. of Assessments Pending</h3>
+                    <p class="text-3xl">4</p>
+                </div>
+                <div class="bg-purple-500 text-white p-6 rounded shadow-lg text-center">
+                    <h3 class="text-lg font-semibold">Therapists Present Today</h3>
+                    <p class="text-3xl">8</p>
+                </div>
+            </div>
+        </section>
+
+       <!-- Basic Information Section -->
+<section id="profile" class="mb-8">
+  <div class="bg-white p-6 rounded shadow-lg">
+      <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+            <h3 class="font-semibold">ID</h3>
+            <p>CS12345</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">Name</h3>
+            <p>Dr. John Doe</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">Gender</h3>
+            <p>Male</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">Specialization</h3>
+            <p>Speech Therapy</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">Phone Number</h3>
+            <p>+91 9876543210</p>
+        </div>
+        <div>
+            <h3 class="font-semibold">Email</h3>
+            <p>john.doe@example.com</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+        <!-- Review Lesson Plan Section -->
+        <section id="reviewLessonPlan" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Review Lesson Plan</h2>
+            <div class="bg-white p-6 rounded shadow-lg">
+                <h3 class="text-lg font-semibold">Submitted Lesson Plans</h3>
+                <div class="mt-4">
+                    <div class="bg-gray-100 p-4 rounded mb-4">
+                        <p><strong>Patient:</strong> Jane Doe</p>
+                        <p><strong>Therapist:</strong> Therapist A</p>
+                        <div class="mt-2">
+                            <button class="bg-green-500 text-white px-4 py-2 rounded mr-2">Approve</button>
+                            <button class="bg-red-500 text-white px-4 py-2 rounded">Reject</button>
+                        </div>
+                    </div>
+                    <!-- More lesson plan entries -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Message Section -->
+        <section id="directMessage" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Direct Message</h2>
+            <div class="bg-white p-6 rounded shadow-lg">
+                <h3 class="text-lg font-semibold">Select Therapist</h3>
+                <select class="p-2 border border-gray-300 rounded w-full mb-4">
+                    <option>Select Therapist</option>
+                    <option>Therapist A</option>
+                    <option>Therapist B</option>
+                    <!-- More therapists -->
+                </select>
+                <textarea class="p-2 border border-gray-300 rounded w-full mb-4" placeholder="Enter message..."></textarea>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded">Send Message</button>
+            </div>
+        </section>
+
+        <!-- Review Report Section -->
+        <section id="reviewReport" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">Review Reports</h2>
+            <div class="bg-white p-6 rounded shadow-lg">
+                <h3 class="text-lg font-semibold">Therapists with Reports</h3>
+                <ul class="list-disc ml-6">
+                    <li><a href="#" class="text-blue-500 hover:underline">Therapist A (2 Reports)</a></li>
+                    <li><a href="#" class="text-blue-500 hover:underline">Therapist B (1 Report)</a></li>
+                    <!-- More therapists -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- View Details Section -->
+        <section id="viewDetails" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-6">View Details</h2>
+            <div class="bg-white p-6 rounded shadow-lg">
+                <h3 class="text-lg font-semibold">Current Sessions</h3>
+                <ul class="list-disc ml-6">
+                    <li>Session 1 - Jane Doe with Therapist A</li>
+                    <li>Session 2 - John Smith with Therapist B</li>
+                    <!-- More sessions -->
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
