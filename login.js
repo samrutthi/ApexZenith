@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Redirect to a different page or perform further actions here
             if(userType === 'therapist'){window.location.href = 'therapist.html';}
             else if (userType === 'clinicalSupervisor'){window.location.href = 'clinicalSupervisor.html';}
-            else if (userType === 'caseSupervisor'){window.location.href = 'caseSupervisor.html';}
+            else if (userType === 'caseSupervisor'){window.location.href = 'casesupervisor.html';}
         } else {
             alert('Invalid username or password');
         }
