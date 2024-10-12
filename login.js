@@ -1,16 +1,23 @@
+window.onload = function() {
+    alert(`For demo purposes, use following username and password provided:\n
+        Therapist > username :therapist1, password: pass123\n
+        Clinical Supervisor > username: super1, password: super123\n
+        Case Supervisor > username: case1, password: case123`);
+};
+
 // Dummy user data
 const users = {
     therapist: [
-        { username: 'therapist1', password: 'password123' },
-        { username: 'therapist2', password: 'password456' }
+        { username: 'therapist1', password: 'pass123' },
+        { username: 'therapist2', password: 'pass456' }
     ],
     clinicalSupervisor: [
-        { username: 'supervisor1', password: 'supervisor123' },
-        { username: 'supervisor2', password: 'supervisor456' }
+        { username: 'super1', password: 'super123' },
+        { username: 'super2', password: 'super456' }
     ],
     caseSupervisor: [
-        { username: 'case1', password: 'casepassword123' },
-        { username: 'case2', password: 'casepassword456' }
+        { username: 'case1', password: 'case123' },
+        { username: 'case2', password: 'case456' }
     ]
 };
 
