@@ -1,0 +1,141 @@
+<!--correctio_reports.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports for Corrections</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .correction-box {
+      display: none;
+    }
+    .show-correction {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">Reports for Corrections</h1>
+    
+    <!-- Card 1 -->
+    <div class="relative bg-white p-6 rounded shadow-md mb-4">
+      <div class="flex justify-end space-x-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 1')">View</button>
+        <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600" onclick="makeCorrection(this)">Make Correction</button>
+        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="approveReport('Patient 1')">Submit</button>
+      </div>
+      <p class="mt-4">TH12345 JOHN DOE PT12345</p>
+
+      <!-- Correction Description Box -->
+      <div class="correction-box mt-2 bg-gray-100 p-4 rounded shadow">
+        <textarea class="w-full p-2 border border-gray-300 rounded description-textarea" placeholder="Add description for making corrections"></textarea>
+        <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700 submit-correction">Submit</button>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="relative bg-white p-6 rounded shadow-md mb-4">
+        <div class="flex justify-end space-x-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 1')">View</button>
+          <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600" onclick="makeCorrection(this)">Make Correction</button>
+          <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="approveReport('Patient 1')">Submit</button>
+        </div>
+        <p class="mt-4">TH12345 JOHN DOE PT12345</p>
+  
+        <!-- Correction Description Box -->
+        <div class="correction-box mt-2 bg-gray-100 p-4 rounded shadow">
+          <textarea class="w-full p-2 border border-gray-300 rounded description-textarea" placeholder="Add description for making corrections"></textarea>
+          <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700 submit-correction">Submit</button>
+        </div>
+      </div>
+    <!-- Card 3 -->
+    <div class="relative bg-white p-6 rounded shadow-md mb-4">
+        <div class="flex justify-end space-x-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 1')">View</button>
+          <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600" onclick="makeCorrection(this)">Make Correction</button>
+          <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="approveReport('Patient 1')">Submit</button>
+        </div>
+        <p class="mt-4">TH12345 JOHN DOE PT12345</p>
+  
+        <!-- Correction Description Box -->
+        <div class="correction-box mt-2 bg-gray-100 p-4 rounded shadow">
+          <textarea class="w-full p-2 border border-gray-300 rounded description-textarea" placeholder="Add description for making corrections"></textarea>
+          <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700 submit-correction">Submit</button>
+        </div>
+      </div>
+    <!-- Card 4 -->
+    <div class="relative bg-white p-6 rounded shadow-md mb-4">
+        <div class="flex justify-end space-x-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 1')">View</button>
+          <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600" onclick="makeCorrection(this)">Make Correction</button>
+          <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="approveReport('Patient 1')">Submit</button>
+        </div>
+        <p class="mt-4">TH12345 JOHN DOE PT12345</p>
+  
+        <!-- Correction Description Box -->
+        <div class="correction-box mt-2 bg-gray-100 p-4 rounded shadow">
+          <textarea class="w-full p-2 border border-gray-300 rounded description-textarea" placeholder="Add description for making corrections"></textarea>
+          <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700 submit-correction">Submit</button>
+        </div>
+      </div>
+    <!-- Card 5 -->
+    <div class="relative bg-white p-6 rounded shadow-md mb-4">
+        <div class="flex justify-end space-x-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 1')">View</button>
+          <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600" onclick="makeCorrection(this)">Make Correction</button>
+          <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="approveReport('Patient 1')">Submit</button>
+        </div>
+        <p class="mt-4">TH12345 JOHN DOE PT12345</p>
+  
+        <!-- Correction Description Box -->
+        <div class="correction-box mt-2 bg-gray-100 p-4 rounded shadow">
+          <textarea class="w-full p-2 border border-gray-300 rounded description-textarea" placeholder="Add description for making corrections"></textarea>
+          <button class="bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700 submit-correction">Submit</button>
+        </div>
+      </div>
+
+  <script>
+    // View report function
+    function viewReport(patient) {
+      alert("Viewing report for " + patient);
+    }
+
+    // Approve report function
+    function approveReport(patient) {
+      alert(patient + "'s report has been approved.");
+    }
+
+    // Make Correction function
+    function makeCorrection(button) {
+      const correctionBox = $(button).closest('.relative').find('.correction-box');
+      correctionBox.toggleClass('show-correction');
+
+      const textarea = correctionBox.find('.description-textarea');
+      const submitButton = correctionBox.find('.submit-correction');
+
+      // Handle the text overlay behavior
+      textarea.on('input', function() {
+        if ($(this).val().length > 0) {
+          $(this).removeAttr('placeholder');
+        } else {
+          $(this).attr('placeholder', 'Add description for making corrections');
+        }
+      });
+
+      // Submit button action
+      submitButton.on('click', function() {
+        const enteredText = textarea.val();
+        if (enteredText.length > 0) {
+          alert('Correction submitted: ' + enteredText);
+          correctionBox.removeClass('show-correction');
+        } else {
+          alert('Please enter a description.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

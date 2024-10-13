@@ -1,0 +1,77 @@
+<!--Patient2.html--><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .profile-pic-container {
+            position: relative;
+            width: 8rem; /* w-32 */
+            height: 8rem; /* h-32 */
+        }
+        .profile-pic-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+            border-radius: 9999px; /* Make the overlay rounded */
+            z-index: 1;
+        }
+        .profile-pic-container img {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-6">
+        <!-- Patient Information -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center space-x-6">
+                <!-- Profile Picture -->
+                <div class="profile-pic-container rounded-full border-4 border-indigo-500 shadow-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Patient Basic Information -->
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Patient Name: John Doe</h1>
+                    <p class="text-gray-600"><strong>Patient ID:</strong> P123456</p>
+                    <p class="text-gray-600"><strong>Age:</strong> 25</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Therapist Information -->
+        <div class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Therapist Details</h2>
+            <p class="text-gray-600"><strong>Therapist Name:</strong> Dr. Jane Smith</p>
+            <p class="text-gray-600"><strong>Therapist ID:</strong> T789012</p>
+        </div>
+
+        <!-- Session Details -->
+        <div class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Session Details</h2>
+            <ul class="list-disc list-inside text-gray-600">
+                <li><strong>Session 1:</strong> Therapy on 01/09/2024, Focus: Speech Improvement</li>
+                <li><strong>Session 2:</strong> Therapy on 05/09/2024, Focus: Cognitive Skills</li>
+                <li><strong>Session 3:</strong> Therapy on 12/09/2024, Focus: Articulation</li>
+            </ul>
+        </div>
+
+        <!-- Report of Diagnosis -->
+        <div class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Report of Diagnosis</h2>
+            <p class="text-gray-600">The patient was diagnosed with moderate speech delay and has been undergoing speech therapy sessions to improve cognitive and articulation skills. Progress has been consistent with visible improvements over the last two weeks.</p>
+        </div>
+    </div>
+
+</body>
+</html>

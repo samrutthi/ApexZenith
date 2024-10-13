@@ -1,0 +1,60 @@
+<!--accepted_reports.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accepted Reports</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-6">Accepted Reports</h1>
+    
+    <!-- Card Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="flex items-center bg-white p-4 rounded shadow-md">
+        <p class="flex-1 truncate">TH12345 JOHN DOE PT12345</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 1')">View</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex items-center bg-white p-4 rounded shadow-md">
+        <p class="flex-1 truncate">TH12345 JOHN DOE PT12345</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 2')">View</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex items-center bg-white p-4 rounded shadow-md">
+        <p class="flex-1 truncate">TH12345 JOHN DOE PT12345</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 3')">View</button>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex items-center bg-white p-4 rounded shadow-md">
+        <p class="flex-1 truncate">TH12345 JOHN DOE PT12345</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 4')">View</button>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flex items-center bg-white p-4 rounded shadow-md">
+        <p class="flex-1 truncate">TH12345 JOHN DOE PT12345</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 5')">View</button>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flex items-center bg-white p-4 rounded shadow-md">
+        <p class="flex-1 truncate">TH12345 JOHN DOE PT12345</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="viewReport('Patient 6')">View</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function viewReport(patient) {
+      alert("Viewing report for " + patient);
+    }
+  </script>
+</body>
+</html>

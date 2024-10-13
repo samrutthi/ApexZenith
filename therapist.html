@@ -1,76 +1,201 @@
-<!DOCTYPE html>
+<!--Therapist.html--><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Therapist Dashboard</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="therapist.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Sidebar Dashboard -->
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
-        <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link text-white active" href="#">
-                <span data-feather="home"></span>
-                Profile
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="mypatients.html">
-                <span data-feather="file"></span>
-                My Patients
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="casesupervisor.html">
-                <span data-feather="users"></span>
-                Case Supervisor
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<body class="bg-gray-100 font-sans h-screen flex">
 
-      <!-- Main Content -->
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Welcome, Therapist</h1>
-        </div>
-
-        <!-- Profile and Upcoming Sessions -->
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Profile</h5>
-                <p class="card-text">Therapist Name: John Doe</p>
-                <p class="card-text">Experience: 5 Years</p>
-                <p class="card-text">Specialization: Speech Therapy</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Upcoming Sessions</h5>
-                <ul class="list-group">
-                  <li class="list-group-item">Patient: Jane Smith - Appointment: Sept 15, 2024</li>
-                  <li class="list-group-item">Patient: Alex Johnson - Appointment: Sept 17, 2024</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-800 text-white h-full p-6 flex-shrink-0">
+    <!-- Profile Image and Name -->
+    <div class="text-center mb-6">
+      <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-2"></div>
+      <h1 class="text-xl font-semibold">Therapist Name</h1>
+      <p class="text-gray-300">Therapist</p>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Sidebar Links -->
+    <nav>
+      <ul>
+        <li class="mb-4"><a href="#dashboard" class="text-gray-300 hover:text-white">Dashboard</a></li>
+        <li class="mb-4"><a href="#therapist-profile" class="text-gray-300 hover:text-white">Therapist Profile</a></li>
+        <li class="mb-4"><a href="#lesson-plan" class="text-gray-300 hover:text-white">Create/Update Lesson Plan</a></li>
+        <li class="mb-4"><a href="#session-report" class="text-gray-300 hover:text-white">Create Session Report</a></li>
+        <li class="mb-4"><a href="#progress-report" class="text-gray-300 hover:text-white">Create Progress Report</a></li>
+        <li class="mb-4"><a href="#reports" class="text-gray-300 hover:text-white">View Reports</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 overflow-auto">
+    <!-- Dashboard Header -->
+    <header class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-4xl font-semibold text-gray-700">Therapist Dashboard</h1>
+            <p class="mt-2 text-gray-500">Manage session data, assess patients, and generate progress reports.</p>
+        </div>
+        <button onclick="logout()" class="bg-red-500 text-white py-2 px-4 rounded">Logout</button>
+    </header>
+
+        <!-- Dashboard metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-blue-500 text-white p-6 rounded shadow-lg">
+                <h2 class="text-lg">Patients Allocated</h2>
+                <p class="text-3xl">5</p>
+            </div>
+            <div class="bg-green-500 text-white p-6 rounded shadow-lg">
+                <h2 class="text-lg">Sessions Today</h2>
+                <p class="text-3xl">3</p>
+            </div>
+            <div class="bg-yellow-500 text-white p-6 rounded shadow-lg">
+                <h2 class="text-lg">Lesson Plans to Create</h2>
+                <p class="text-3xl">2</p>
+            </div>
+            <div class="bg-purple-500 text-white p-6 rounded shadow-lg">
+                <h2 class="text-lg">Rating</h2>
+                <p class="text-3xl">4.5/5</p>
+            </div>
+        </div>
+
+        <!-- Therapist Profile -->
+        <section id="therapistProfile" class="mb-8">
+            <h2 class="text-xl mb-4 font-semibold">Basic Information</h2>
+            <div class="grid grid-cols-2 gap-6 bg-white p-6 rounded shadow-lg ">
+                <div>
+                    <h3 class="font-semibold">ID</h3>
+                    <p>TH12345</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Name</h3>
+                    <p>Dr. Bruce Wayne</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Gender</h3>
+                    <p>Male</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Specialization</h3>
+                    <p>Speech Therapy</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Phone Number</h3>
+                    <p>+91 9876543210</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Email</h3>
+                    <p>bruce.wayne@example.com</p>
+                </div>
+            </div>
+        </section>
+
+    <!-- Functionalities Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- View Patients -->
+      <div class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-4">View Patients</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-gray-100 p-4 rounded cursor-pointer" onclick="window.location.href='patient1.html'">
+            <p class="text-lg">Patient 1</p>
+          </div>
+          <div class="bg-gray-100 p-4 rounded cursor-pointer" onclick="window.location.href='patient2.html'">
+            <p class="text-lg">Patient 2</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create/Update Lesson Plan -->
+      <div id="lesson-plan" class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Create/Update Lesson Plan</h2>
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="patient" class="block text-gray-700">Select Patient</label>
+            <input id="patientSearch" type="text" class="w-full p-2 border rounded" placeholder="Search patient">
+            <select id="patient" class="w-full p-2 border rounded mt-2">
+              <option>Select a patient</option>
+              <option>Patient 1</option>
+              <option>Patient 2</option>
+            </select>
+          </div>
+          <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Create Lesson Plan</button>
+        </form>
+      </div>
+
+      <!-- Create Session Report -->
+      <div id="session-report" class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Create Session Report</h2>
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="sessionPatient" class="block text-gray-700">Select Patient</label>
+            <input id="sessionPatientSearch" type="text" class="w-full p-2 border rounded" placeholder="Search patient">
+            <select id="sessionPatient" class="w-full p-2 border rounded mt-2">
+              <option>Select a patient</option>
+              <option>Patient 1</option>
+              <option>Patient 2</option>
+            </select>
+          </div>
+          <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Create Session Report</button>
+        </form>
+      </div>
+
+      <!-- Create Progress Report -->
+      <div id="progress-report" class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-4">Create Progress Report</h2>
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="progressPatient" class="block text-gray-700">Select Patient</label>
+            <input id="progressPatientSearch" type="text" class="w-full p-2 border rounded" placeholder="Search patient">
+            <select id="progressPatient" class="w-full p-2 border rounded mt-2">
+              <option>Select a patient</option>
+              <option>Patient 1</option>
+              <option>Patient 2</option>
+            </select>
+          </div>
+          <button class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Create Progress Report</button>
+        </form>
+      </div>
+
+      <!-- View Reports -->
+      <div id="reports" class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-xl font-semibold mb-4">View Reports</h2>
+        <div class="mb-4">
+          <button onclick="window.location.href='accepted_reports.html'" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">View Accepted Reports</button>
+        </div>
+        <div>
+          <button onclick="window.location.href='correction_reports.html'" class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">View Reports for Corrections</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    $(document).ready(function(){
+      // Smooth scrolling when a nav link is clicked
+      $('nav ul li a').on('click', function(e){
+        e.preventDefault();
+        const target = $(this).attr('href');
+        $('html, body').animate({
+          scrollTop: $(target).offset().top
+        }, 500);
+      });
+
+      // Search functionality for Lesson Plan, Session Report, and Progress Report dropdowns
+      $('#patientSearch, #sessionPatientSearch, #progressPatientSearch').on('keyup', function(){
+        const value = $(this).val().toLowerCase();
+        $(this).next('select').find('option').filter(function(){
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+      });
+    });
+        // Function to redirect to login page when logout button is clicked
+        function logout() {
+        window.location.href = 'index.html'; // Replace 'login.html' with the actual path to your login page
+    }
+  </script>
 </body>
 </html>
